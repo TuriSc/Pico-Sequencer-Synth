@@ -106,7 +106,7 @@ int main() {
   #endif
 
   // Initialize voices
-  sequencer_init(voices, NUM_VOICES, (const int16_t *)notes, NUM_NOTES);
+  sequencer_init(NUM_VOICES, (const int16_t *)notes, NUM_NOTES);
 
   // Configure voices
   // Arp

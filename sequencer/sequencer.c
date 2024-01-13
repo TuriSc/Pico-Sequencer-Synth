@@ -15,7 +15,7 @@ int16_t * _notes;
 uint8_t num_voices;
 uint16_t beat_ms = 125; // 125ms beat = 120bpm
 
-void sequencer_init(AudioChannel *channel, uint8_t _num_voices, const int16_t *notes, uint16_t length) {
+void sequencer_init(uint8_t _num_voices, const int16_t *notes, uint16_t length) {
   sequencer.track_length = length;
   sequencer.beat_ms = beat_ms;
   set_tempo(120);

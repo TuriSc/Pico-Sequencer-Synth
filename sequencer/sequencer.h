@@ -15,7 +15,7 @@ typedef struct Sequencer {
   bool loop;
 } Sequencer;
 
-void sequencer_init(AudioChannel *channel, uint8_t _num_voices, const int16_t *notes, uint16_t length);
+void sequencer_init(uint8_t _num_voices, const int16_t *notes, uint16_t length);
 void sequencer_start(bool loop);
 void sequencer_stop();
 void sequencer_task();
