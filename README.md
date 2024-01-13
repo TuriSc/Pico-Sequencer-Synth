@@ -26,6 +26,10 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     )
 ```
 
+### A note about PWM audio
+The audio quality of the PWM output is greatly inferior to the I²S one. It's also very noisy if unfiltered, and for this reason you might want to pair it with a DAC circuit to smooth the signal. There are several designs that will work, but my research led me to the one I used for [Dodepan](https://github.com/TuriSc/Dodepan), which also provides some noise filtering and DC offset removal. 
+
+
 ### Credits
 This library is the C port of a [C++ demo by Pimoroni](https://github.com/pimoroni/pimoroni-pico/tree/main/examples/pico_audio), adapted to output audio via I²S or PWM. The original depencency of 'Pico Extras' SDK libraries has been removed and I²S functionality is now provided by a PIO-driven I²S driver based on the work of [Ricardo Massaro](https://github.com/moefh/).
 
