@@ -163,6 +163,10 @@ int main() {
   // You can stop the sequencer with:
   // sequencer_stop();
 
+  // You can also set a callback to execute when the sequence
+  // is complete:
+  // sequencer_set_callback(your_callback_function);
+
   while (true) {
     // Nothing to do here, as all processing and
     // audio generation is asyncronous

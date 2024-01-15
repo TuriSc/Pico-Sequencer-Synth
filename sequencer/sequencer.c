@@ -11,6 +11,8 @@
 Sequencer sequencer;
 repeating_timer_t sequencer_timer;
 
+static void noop(void *user_data) { ; }
+
 int16_t * _notes;
 uint8_t num_voices;
 uint16_t beat_ms = 125; // 125ms beat = 120bpm
@@ -18,6 +20,7 @@ uint16_t beat_ms = 125; // 125ms beat = 120bpm
 void sequencer_init(uint8_t _num_voices, const int16_t *notes, uint16_t length) {
   sequencer.track_length = length;
   sequencer.beat_ms = beat_ms;
+  sequencer.callback = noop;
   sequencer_set_tempo(120);
   num_voices = _num_voices;
   _notes = (int16_t *)notes;
@@ -63,7 +66,11 @@ void sequencer_task(){
   beat = (tick_ms / sequencer.beat_ms);
   if(beat >= sequencer.track_length) { // We reached the end of the track
     if(sequencer.loop) { beat = beat % sequencer.track_length; }
-    else { sequencer_stop(); return; }
+    else {
+      sequencer_stop();
+      sequencer.callback(&sequencer);
+      return;
+    }
   }
 
   if (beat == prev_beat) return;
@@ -106,3 +113,7 @@ void sequencer_set_tempo(uint16_t bpm) {
   beat_ms = 60 * 1000 / bpm / 4;
   sequencer.beat_ms = beat_ms;
 }
+
+void sequencer_set_callback(void (*callback)(void *user_data)) {
+    sequencer.callback = callback;
+};

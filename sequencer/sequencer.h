@@ -8,6 +8,7 @@ extern "C" {
 #endif
 
 typedef struct Sequencer {
+  void (*callback)(void *user_data);
   uint16_t  track_length;
   uint64_t start_time;
   uint16_t beat_ms;
@@ -20,6 +21,7 @@ void sequencer_start(bool loop);
 void sequencer_stop();
 void sequencer_task();
 void sequencer_set_tempo(uint16_t bpm);
+void sequencer_set_callback(void (*callback)(void *user_data));
 bool seq_timer_callback(repeating_timer_t *timer);
 
 #ifdef __cplusplus
