@@ -19,7 +19,7 @@ void sequencer_init(uint8_t _num_voices, const int16_t *notes, uint16_t length);
 void sequencer_start(bool loop);
 void sequencer_stop();
 void sequencer_task();
-void set_tempo(uint16_t bpm);
+void sequencer_set_tempo(uint16_t bpm);
 bool seq_timer_callback(repeating_timer_t *timer);
 
 #ifdef __cplusplus

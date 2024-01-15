@@ -151,7 +151,7 @@ int main() {
   voices[4].volume      = 10000;
 
   // Change the playback speed:
-  // set_tempo(128); // Default is 120bpm
+  // sequencer_set_tempo(128); // Default is 120bpm
 
   // Change the overall volume (I2S output only):
   set_volume(50); // 0-100, default 100
