@@ -3,6 +3,8 @@ A polyphonic, multitimbral DDS (Direct Digital Synthesis) library for Raspberry 
 
 Demo video: [YouTube link](https://www.youtube.com/watch?v=MUQ7loauSa0)
 
+Works with RP2040 and RP2350.
+
 
 ### Features
 - I²S or PWM audio output
