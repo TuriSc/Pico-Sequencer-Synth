@@ -1,6 +1,11 @@
 #ifndef PITCHES_H
 #define PITCHES_H
 
+/**
+ * @file pitches.h
+ * @brief Header file for pitch definitions.
+ */
+
 #define B0  31
 #define C1  33
 #define CS1 35

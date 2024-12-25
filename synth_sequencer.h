@@ -1,6 +1,11 @@
 #ifndef SYNTH_SEQUENCER_H
 #define SYNTH_SEQUENCER_H
 
+/**
+ * @file synth_sequencer.h
+ * @brief Header file for the synth sequencer module.
+ */
+
 #include "synth.h"
 #include "sequencer.h"
 #include "pitches.h"
@@ -21,3 +26,4 @@
 #endif
 
 #endif
+
